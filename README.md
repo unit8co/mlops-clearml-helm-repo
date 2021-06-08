@@ -52,24 +52,24 @@ In order to use your own deployment, make sure to disable the existing one in th
  
 1. Add the **clearml-server** repository to your Helm:
 
-        helm repo add allegroai https://allegroai.github.io/clearml-server-helm-cloud-ready/
+        helm repo add unit8-mlops https://unit8co.github.io/mlops-clearml-helm-repo/
 
 1. Confirm the **clearml-server** repository is now in Helm:
 
-        helm search repo clearml
+        helm search repo unit8-mlops
 
-    The helm search results must include `allegroai/clearml-server-cloud-ready`.
+    The helm search results must include `unit8-mlops/mlops-clearml-server`.
 
-1. Install `clearml-server-cloud-ready` on your cluster:
+1. Install `unit8-mlops/mlops-clearml-server` on your cluster:
 
-        helm install clearml-server allegroai/clearml-server-cloud-ready --namespace=clearml --create-namespace
+        helm install clearml-server unit8-mlops/mlops-clearml-server --namespace=default --values=values.yaml
 
-    A  clearml `namespace` is created in your cluster and **clearml-server** is deployed in it.
+    **clearml-server** is deployed in the default namespace.
    
         
 ## Updating ClearML Server application using Helm
 
-1. If you are upgrading from the [single node version](https://github.com/allegroai/clearml-server-helm) of ClearML Server helm charts, follow these steps first:
+1. If you are upgrading from the [single node version](https://unit8co.github.io/mlops-clearml-helm-repo/) of ClearML Server helm charts, follow these steps first:
 
     1. Log in to the node previously labeled as `app=trains`
     1. Copy each folder under /opt/clearml/data to it's persistent volume. 
@@ -77,11 +77,11 @@ In order to use your own deployment, make sure to disable the existing one in th
 
 1. Update using new or updated `values.yaml`
         
-        helm upgrade clearml-server allegroai/clearml-server-cloud-ready -f new-values.yaml
+        helm upgrade clearml-server unit8-mlops/mlops-clearml-server -f values.yaml
         
 1. If there are no breaking changes, you can update your deployment to match repository version:
 
-        helm upgrade clearml-server allegroai/clearml-server-cloud-ready
+        helm upgrade clearml-server unit8-mlops/mlops-clearml-server
    
    **Important**: 
         
