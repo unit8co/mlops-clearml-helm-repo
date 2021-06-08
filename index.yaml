@@ -1,0 +1,106 @@
+apiVersion: v1
+entries:
+  elasticsearch:
+  - apiVersion: v1
+    appVersion: 7.6.2
+    created: "2021-06-08T08:22:25.561561+02:00"
+    description: Official Elastic helm chart for Elasticsearch
+    digest: bfe469bbea16f107297a42f5ea8c3c93d6606d73b90770d73c0e3d6ad9a38c56
+    home: https://github.com/elastic/helm-charts
+    icon: https://helm.elastic.co/icons/elasticsearch.png
+    maintainers:
+    - email: helm-charts@elastic.co
+      name: Elastic
+    name: elasticsearch
+    sources:
+    - https://github.com/elastic/elasticsearch
+    urls:
+    - charts/elasticsearch-7.6.2.tgz
+    version: 7.6.2
+  mlops-clearml-server:
+  - apiVersion: v2
+    appVersion: 1.0.2
+    created: "2021-06-08T08:22:25.559062+02:00"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: ~10.9.0
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: ~10.3.2
+    - condition: elasticsearch.enabled
+      name: elasticsearch
+      repository: https://helm.elastic.co
+      version: ~7.6.2
+    description: Clearml server Helm chart for Kubernetes
+    digest: 6b312c4637083830b702eee514aed2a6014cfd51dc4460036c1478115e75d924
+    name: mlops-clearml-server
+    urls:
+    - mlops-clearml-server-1.0.tgz
+    version: "1.0"
+  mongodb:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 4.4.3
+    created: "2021-06-08T08:22:25.564859+02:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: NoSQL document-oriented database that stores JSON-like documents
+      with dynamic schemas, simplifying the integration of data in content-driven
+      applications.
+    digest: dfaf47fb5851b19dfe271e8280fbcde1c02b10dd0c31ee522a1614b704b09c67
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mongodb
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mongodb
+    - https://mongodb.org
+    urls:
+    - charts/mongodb-10.3.4.tgz
+    version: 10.3.4
+  redis:
+  - annotations:
+      category: Database
+    apiVersion: v1
+    appVersion: 6.0.8
+    created: "2021-06-08T08:22:25.568264+02:00"
+    description: Open source, advanced key-value store. It is often referred to as
+      a data structure server since keys can contain strings, hashes, lists, sets
+      and sorted sets.
+    digest: a2a6d7b06bc8aba16bac89d9a31c6cc7b5d2bbb9660a3b31dc2e6328580289a5
+    home: https://github.com/bitnami/charts/tree/master/bitnami/redis
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    - http://redis.io/
+    urls:
+    - charts/redis-10.9.0.tgz
+    version: 10.9.0
+generated: "2021-06-08T08:22:25.546985+02:00"
