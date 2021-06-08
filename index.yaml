@@ -3,7 +3,7 @@ entries:
   elasticsearch:
   - apiVersion: v1
     appVersion: 7.6.2
-    created: "2021-06-08T14:17:18.724811+02:00"
+    created: "2021-06-09T01:01:36.365355+02:00"
     description: Official Elastic helm chart for Elasticsearch
     digest: bfe469bbea16f107297a42f5ea8c3c93d6606d73b90770d73c0e3d6ad9a38c56
     home: https://github.com/elastic/helm-charts
@@ -20,7 +20,7 @@ entries:
   mlops-clearml-server:
   - apiVersion: v2
     appVersion: 1.0.2
-    created: "2021-06-08T14:17:18.723115+02:00"
+    created: "2021-06-09T01:01:36.363989+02:00"
     dependencies:
     - condition: redis.enabled
       name: redis
@@ -35,7 +35,7 @@ entries:
       repository: https://helm.elastic.co
       version: ~7.6.2
     description: Clearml server Helm chart for Kubernetes
-    digest: 10d94242c76d6c56b63afcdac160fa966f4b8964764e5f1b9321b3c3353f62c8
+    digest: 936a404e49df07fe06105c3c72dece5b5ee27b2068a8c2c96af80adbda06b580
     name: mlops-clearml-server
     urls:
     - mlops-clearml-server-1.0.tgz
@@ -45,7 +45,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 4.4.3
-    created: "2021-06-08T14:17:18.727858+02:00"
+    created: "2021-06-09T01:01:36.368375+02:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -80,7 +80,7 @@ entries:
       category: Database
     apiVersion: v1
     appVersion: 6.0.8
-    created: "2021-06-08T14:17:18.730657+02:00"
+    created: "2021-06-09T01:01:36.371147+02:00"
     description: Open source, advanced key-value store. It is often referred to as
       a data structure server since keys can contain strings, hashes, lists, sets
       and sorted sets.
@@ -103,4 +103,4 @@ entries:
     urls:
     - charts/redis-10.9.0.tgz
     version: 10.9.0
-generated: "2021-06-08T14:17:18.710269+02:00"
+generated: "2021-06-09T01:01:36.352252+02:00"
